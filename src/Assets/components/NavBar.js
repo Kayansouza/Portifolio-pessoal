@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-import logo from '../img/logo.svg'
-import navIcon1 from'../img/nav-icon1.svg'
-import navIcon2 from '../img/nav-icon2.svg';
+import { Navbar, Container, Nav } from "react-bootstrap";
+import logo from '../img/logo.svg';
+import navIcon1 from '../img/nav-icon1.svg';
+import navIcon2 from '../img/github.svg';
 import navIcon3 from '../img/nav-icon3.svg';
 
 export const NavBar = () => {
@@ -33,18 +33,42 @@ export const NavBar = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-              <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
-            </Nav>
+            <Nav.Link 
+              href="#home" 
+              className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} 
+              onClick={() => onUpdateActiveLink('home')}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link 
+              href="#skills" 
+              className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} 
+              onClick={() => onUpdateActiveLink('skills')}
+            >
+              Skills
+            </Nav.Link>
+            <Nav.Link 
+              href="#projects" 
+              className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} 
+              onClick={() => onUpdateActiveLink('projects')}
+            >
+              Projects
+            </Nav.Link>
+          </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-              <a href="#"><img src={navIcon1} alt="Ícone de Rede Social 1" /></a>
-              <a href="#"><img src={navIcon2} alt="Ícone de Rede Social 2" /></a>
-              <a href="#"><img src={navIcon3} alt="Ícone de Rede Social 3" /></a>
+              <a href="https://www.linkedin.com/in/richard-kayan-de-souza-91a532204/" aria-label="LinkedIn">
+                <img src={navIcon1} alt="LinkedIn Icon" />
+              </a>
+              <a href="https://github.com/Kayansouza" aria-label="GitHub">
+                <img src={navIcon2} alt="GitHub Icon" />
+              </a>
+              <a href="#" aria-label="Other Social Media">
+                <img src={navIcon3} alt="Other Social Media Icon" />
+              </a>
             </div>
             <button className="vvd" onClick={() => window.location.href = '#contato'}>
-              <span>Vamos Conectar</span>
+              <span> Vamos nos Conectar</span>
             </button>
           </span>
         </Navbar.Collapse>

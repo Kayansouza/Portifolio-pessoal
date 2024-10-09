@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { BsArrowRightCircle } from "react-icons/bs";  // Correção da importação
-import TrackVisibility from 'react-on-screen';  // Importando TrackVisibility corretamente
-import headerimg from '../img/header-img.svg';  // Usando o nome correto para a variável
+import { BsArrowRightCircle } from "react-icons/bs"; // Correção da importação
+import TrackVisibility from 'react-on-screen'; // Importando TrackVisibility corretamente
+import headerimg from '../img/header-img.svg'; // Usando o nome correto para a variável
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -18,8 +18,8 @@ export const Banner = () => {
       tick();
     }, delta);
 
-    return () => { clearInterval(ticker); };
-  }, [text]);
+    return () => clearInterval(ticker);
+  }, [text, delta]); // Adicionando delta como dependência
 
   const tick = () => {
     let i = loopNum % toRotate.length;
