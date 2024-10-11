@@ -2,8 +2,8 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../img/Project -1.png";
 import projImg2 from "../img/Project-2.png";
-import projImg3 from "../img/project- 3. png.jpeg";  // Corrigido nome do arquivo
-import projImg4 from "../img/project.jpeg"
+import projImg3 from "../img/project- 3. png.jpeg";
+import projImg4 from "../img/project.jpeg";
 import projImg5 from "../img/projetc-5.jpeg";
 import colorSharp2 from "../img/color-sharp2.png";
 import TrackVisibility from 'react-on-screen';
@@ -15,7 +15,7 @@ export const Projects = () => {
       title: "Lobo - Desenvolvedor",
       description: "Design & Development",
       imgUrl: projImg1,
-      link: "https://657913b4681e713ac7aec57e--frabjous-chaja-3be2ec.netlify.app/", // Corrigido: link envolto em aspas
+      link: "https://657913b4681e713ac7aec57e--frabjous-chaja-3be2ec.netlify.app/",
     },
     {
       title: "Bikcraft",
@@ -27,7 +27,7 @@ export const Projects = () => {
       title: "ApiPokedx",
       description: "Design & Development",
       imgUrl: projImg3,
-      link: "https://api-pokedex-gilt.vercel.app/", // Corrigido: adição da chave `link`
+      link: "https://api-pokedex-gilt.vercel.app/",
     },
     {
       title: "Animais - Fantasticos",
@@ -39,21 +39,20 @@ export const Projects = () => {
       title: "Rick and Morty - jogo da Memoria",
       description: "Design & Development",
       imgUrl: projImg5,
-      link: "https://classy-gecko-2629c4.netlify.app/", // Corrigido: link envolto em aspas
+      link: "https://classy-gecko-2629c4.netlify.app/",
     },
   ];
   
-
   return (
     <section className="project" id="projects">
       <Container>
         <Row>
-          <Col xs={12}> {/* Substituído size por xs */}
+          <Col xs={12}>
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
-                <p>Aqui abaixo está alguns dos projetos feitos por mim, onde eu aprimorei meus conhecimentos em HTML, CSS, JavaScript e React Js</p> {/* Substituir Lorem Ipsum */}
+                <p>Aqui abaixo está alguns dos projetos feitos por mim, onde eu aprimorei meus conhecimentos em HTML, CSS, JavaScript e React Js</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
@@ -68,13 +67,13 @@ export const Projects = () => {
                               <ProjectCard
                                 key={index}
                                 {...project}
-                                />
+                              />
                             )
                           })
                         }
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="second"> {/* Corrigido */}
+                    <Tab.Pane eventKey="second">
                       <p>This tab contains detailed information about our process for creating exceptional business startups.</p>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
@@ -87,7 +86,7 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2} alt="" /> {/* Adicionado alt */}
+      <img className="background-image-right" src={colorSharp2} alt="" />
     </section>
   )
 }

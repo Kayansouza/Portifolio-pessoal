@@ -16,14 +16,11 @@ export const Footer = () => {
           <Col xs={12} sm={6} className="text-center text-sm-end">
             <img src={logo} alt="Company Logo" className="footer-logo" />
             <div className="social-icon">
-              <a href="#" aria-label="Link to social media 1">
+              <a href="https://www.linkedin.com/in/richard-kayan-de-souza-91a532204/" aria-label="Link to social media 1">
                 <img src={navIcon1} alt="Social Icon 1" />
               </a>
-              <a href="#" aria-label="Link to GitHub">
+              <a href="https://github.com/Kayansouza" aria-label="Link to GitHub">
                 <img src={navIcon2} alt="GitHub Icon" />
-              </a>
-              <a href="#" aria-label="Link to social media 2">
-                <img src={navIcon3} alt="Social Icon 3" />
               </a>
             </div>
             <p>Copyright 2022. All Rights Reserved</p>

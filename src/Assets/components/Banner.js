@@ -56,7 +56,7 @@ export const Banner = () => {
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Bem-vindo ao meu Portfolio</span>
                   <h1>{`Eu sou o Kayan`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                  <p>Sou um jovem entusiasta de 20 anos, atualmente cursando o segundo semestre de Análise e Desenvolvimento de Sistemas. Profundo interesse em expandir conhecimentos e habilidades na área de desenvolvimento, com foco especial em JavaScript. Determinado a explorar oportunidades que promovam aprendizado contínuo e crescimento profissional. Apaixonado por inovação, estou comprometido em integrar conceitos modernos e práticas ágeis para enfrentar os desafios do mundo da tecnologia. Busco ativamente oportunidades para aplicar e aprimorar minhas habilidades, contribuindo positivamente para projetos e equipes. Pronto para abraçar novos desafios e evoluir constantemente no campo dinâmico do desenvolvimento de software.</p>
                   <button onClick={() => console.log('connect')}>Let’s Connect <BsArrowRightCircle size={25} /></button> {/* Corrigido para BsArrowRightCircle */}
                 </div>}
             </TrackVisibility>

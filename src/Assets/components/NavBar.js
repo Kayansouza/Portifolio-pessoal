@@ -3,11 +3,12 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import logo from '../img/logo.svg';
 import navIcon1 from '../img/nav-icon1.svg';
 import navIcon2 from '../img/github.svg';
-import navIcon3 from '../img/nav-icon3.svg';
+import { useNavigate } from 'react-router-dom';
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => {
@@ -63,13 +64,12 @@ export const NavBar = () => {
               <a href="https://github.com/Kayansouza" aria-label="GitHub">
                 <img src={navIcon2} alt="GitHub Icon" />
               </a>
-              <a href="#" aria-label="Other Social Media">
-                <img src={navIcon3} alt="Other Social Media Icon" />
-              </a>
             </div>
-            <button className="vvd" onClick={() => window.location.href = '#contato'}>
-              <span> Vamos nos Conectar</span>
-            </button>
+            <a href="https://www.linkedin.com/in/richard-kayan-de-souza-91a532204/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <button className="vvd">
+                <span>Vamos nos Conectar</span>
+              </button>
+            </a>
           </span>
         </Navbar.Collapse>
       </Container>
