@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook para navegação
 
   useEffect(() => {
     const onScroll = () => {
@@ -21,12 +21,13 @@ export const NavBar = () => {
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
+    navigate(`#${value}`); // Navega para a seção correspondente
   };
 
   return (
     <Navbar expand="lg" className={scrolled ? 'scrolled' : ''}>
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand onClick={() => navigate('/home')}>
           <img src={logo} alt="Logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -34,23 +35,20 @@ export const NavBar = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link 
-              href="#home" 
-              className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} 
+            <Nav.Link
+              className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'}
               onClick={() => onUpdateActiveLink('home')}
             >
               Home
             </Nav.Link>
-            <Nav.Link 
-              href="#skills" 
-              className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} 
+            <Nav.Link
+              className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'}
               onClick={() => onUpdateActiveLink('skills')}
             >
               Skills
             </Nav.Link>
-            <Nav.Link 
-              href="#projects" 
-              className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} 
+            <Nav.Link
+              className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'}
               onClick={() => onUpdateActiveLink('projects')}
             >
               Projects
@@ -65,11 +63,12 @@ export const NavBar = () => {
                 <img src={navIcon2} alt="GitHub Icon" />
               </a>
             </div>
-            <a href="https://www.linkedin.com/in/richard-kayan-de-souza-91a532204/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-              <button className="vvd">
-                <span>Vamos nos Conectar</span>
-              </button>
-            </a>
+            <button
+              className="vvd"
+              onClick={() => navigate('https://www.linkedin.com/in/richard-kayan-de-souza-91a532204/')}
+            >
+              <span>Vamos nos Conectar</span>
+            </button>
           </span>
         </Navbar.Collapse>
       </Container>
