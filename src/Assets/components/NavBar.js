@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
-  const navigate = useNavigate(); // Hook para navegação
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => {
@@ -21,13 +21,13 @@ export const NavBar = () => {
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
-    navigate(`#${value}`); // Navega para a seção correspondente
+    document.getElementById(value)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <Navbar expand="lg" className={scrolled ? 'scrolled' : ''}>
       <Container>
-        <Navbar.Brand onClick={() => navigate('/home')}>
+        <Navbar.Brand onClick={() => onUpdateActiveLink('home')}>
           <img src={logo} alt="Logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -65,7 +65,7 @@ export const NavBar = () => {
             </div>
             <button
               className="vvd"
-              onClick={() => navigate('https://www.linkedin.com/in/richard-kayan-de-souza-91a532204/')}
+              onClick={() => window.location.href = 'https://www.linkedin.com/in/richard-kayan-de-souza-91a532204/'}
             >
               <span>Vamos nos Conectar</span>
             </button>
