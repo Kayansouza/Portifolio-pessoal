@@ -65,7 +65,7 @@ export const NavBar = () => {
             </div>
             <button
               className="vvd"
-              onClick={() => window.location.href = 'https://www.linkedin.com/in/richard-kayan-de-souza-91a532204/'}
+              onClick={() => window.location.href = 'mailto:Rick.kayan@gmail.com'}
             >
               <span>Vamos nos Conectar</span>
             </button>
